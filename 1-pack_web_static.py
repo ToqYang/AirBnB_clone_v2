@@ -18,7 +18,6 @@ def do_pack():
         dat = dat.strftime("%Y%m%d%H%M%S")
 
         new_mar = "versions/web_static_{}.tgz".format(dat)
-        
         local("tar -cvzf {} web_static".format(new_mar))
         return new_mar
 
