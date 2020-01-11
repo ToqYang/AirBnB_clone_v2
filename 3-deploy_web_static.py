@@ -10,9 +10,7 @@ import os
 
 env.hosts = ['34.73.238.143', '35.229.20.11']
 env.user = "ubuntu"
-env.use_ssh_config = True
-env.ssh_config_path = '~/.ssh/ssh_config'
-env.key_filename = '~/.ssh/holberton'
+
 
 def do_pack():
     """ Do the pack to Fabric """
@@ -29,6 +27,7 @@ def do_pack():
 
     except:
         return None
+
 
 def do_deploy(archive_path):
     """ It does deploy in the webserver """
@@ -57,6 +56,7 @@ def do_deploy(archive_path):
 
     except:
         return None
+
 
 def deploy():
     """ Deploy the functions """
