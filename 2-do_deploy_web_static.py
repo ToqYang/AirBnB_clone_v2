@@ -9,10 +9,7 @@ import os
 
 def do_deploy(archive_path):
     """ It does deploy in the webserver """
-    env.hosts = [
-        '34.73.238.143'
-        '35.229.20.11'
-    ]
+    env.hosts = ['34.73.238.143', '35.229.20.11']
 
     env.user = "ubuntu"
     env.use_ssh_config = True
