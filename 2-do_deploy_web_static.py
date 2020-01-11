@@ -28,7 +28,7 @@ def do_deploy(archive_path):
         fol_des = fil_tgz.replace(".tgz", "")
         path = "/data/web_static/releases/"
 
-        put(nam_fil, "/tmp/{}".format(fil_tgz))
+        put(archive_path, "/tmp/")
 
         run("mkdir -p {}{}/".format(path, fol_des))
         run("tar -xzf /tmp/{} -C {}{}/".format(fil_tgz, path, fol_des))
