@@ -3,15 +3,14 @@
 using the function do_deploy """
 from datetime import datetime
 from fabric.api import *
-from split import shlex
+import shlex
 import os
 
 
 def do_deploy(archive_path):
     """ It does deploy in the webserver """
     env.hosts = [
-        '34.73.238.143'
-        '35.229.20.11'
+        '172.17.0.24'
     ]
 
     env.user = "ubuntu"
