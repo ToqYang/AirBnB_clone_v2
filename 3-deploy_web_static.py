@@ -65,4 +65,3 @@ def deploy():
         return False
     mydeploy = do_deploy(archive_path)
     return (mydeploy)
-
