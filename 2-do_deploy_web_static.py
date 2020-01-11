@@ -29,6 +29,7 @@ def do_deploy(archive_path):
         path = "/data/web_static/releases/"
 
         put(nam_fil, "/tmp/{}".format(fil_tgz))
+
         run("mkdir -p {}{}/".format(path, fol_des))
         run("tar -xzf /tmp/{} -C {}{}/".format(fil_tgz, path, fol_des))
         run("rm /tmp/{}".format(fil_tgz))
@@ -36,6 +37,8 @@ def do_deploy(archive_path):
         run("rm -rf {}{}/web_static".format(path, fol_des))
         run("rm -rf /data/web_static/current")
         run("ln -s {}{}/ /data/web_static/current".format(path, fol_des))
+
+        print("New version deployed!")
 
         return True
 
