@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """This is the db storage class for AirBnB"""
 
+from sqlalchemy import (create_engine)
 from sqlalchemy.orm import sessionmaker, scoped_session
 from models.base_model import BaseModel, Base
 from sqlalchemy import create_engine
@@ -68,3 +69,7 @@ class DBStorage:
         session = sessionmaker(bind=self.__engine, expire_on_commit=False)
         session = scoped_session(session)
         self.__session = session()
+
+    def close(self):
+        """ Close session """
+        self.__session.close()
