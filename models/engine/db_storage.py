@@ -42,7 +42,7 @@ class DBStorage:
 
         for table in cls:
             for obj in self.__session.query(eval(table)).all():
-                key = obj.__class__.__name__ + '.' + obj.id
+                key = obj.cls + '.' + obj.id
                 objs[key] = obj
 
         return objs
