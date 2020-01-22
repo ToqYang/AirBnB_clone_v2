@@ -22,7 +22,7 @@ class State(BaseModel, Base):
         """
         returns City's with same State.id
         """
-        mydict = models.storage.all(city)
+        mydict = models.storage.all(City)
         cities = []
 
         for states, city in mydict.items():
