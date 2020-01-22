@@ -41,8 +41,8 @@ class DBStorage:
             cls.remove('BaseModel')
 
         for table in cls:
-            for obj in self.__session.query(eval(table)).all():
-                key = obj.cls + '.' + obj.id
+            for obj in self.__session.query(eval(table):
+                key = obj.__class__.__name__ + '.' + obj.id
                 objs[key] = obj
 
         return objs
