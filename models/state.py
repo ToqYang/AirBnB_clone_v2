@@ -4,7 +4,7 @@ from models.base_model import BaseModel, Base
 from sqlalchemy.orm import relationship
 from sqlalchemy import Column, String
 import models
-
+from models.city import City
 
 class State(BaseModel, Base):
     """This is the class for State
@@ -25,7 +25,7 @@ class State(BaseModel, Base):
         mydict = models.storage.all(City)
         cities = []
 
-        for states, city in mydict.items():
-            if city.state_id == self.id:
-                cities.append(city)
-        return cities
+        for states, ci in mydict.items():
+            if ci.state_id == self.id:
+                ci.append(city)
+        return ci
