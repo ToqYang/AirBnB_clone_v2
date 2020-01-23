@@ -32,7 +32,12 @@ class FileStorage:
         Return:
             returns a dictionary of __object
         """
-
+         if cls:
+            obj = {}
+            for key, value in self.__objects.items():
+                if type(value).__name__ == cls.__name__:
+                    obj[key] = value
+            return obj
         return self.__objects
 
     def new(self, obj):
