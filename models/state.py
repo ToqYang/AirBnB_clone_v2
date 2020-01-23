@@ -5,6 +5,7 @@ from sqlalchemy.orm import relationship
 from sqlalchemy import Column, String
 import models
 
+
 class State(BaseModel, Base):
     """This is the class for State
     Attributes:
@@ -21,7 +22,7 @@ class State(BaseModel, Base):
         """
         returns City's with same State.id
         """
-        mydict = models.storage.all(City)
+        mydict = models.storage.all(models.City)
         cities = []
 
         for states, ci in mydict.items():

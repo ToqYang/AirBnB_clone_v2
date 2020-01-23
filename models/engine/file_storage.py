@@ -32,7 +32,7 @@ class FileStorage:
         Return:
             returns a dictionary of __object
         """
-         if cls:
+        if cls:
             obj = {}
             for key, value in self.__objects.items():
                 if type(value).__name__ == cls.__name__:
